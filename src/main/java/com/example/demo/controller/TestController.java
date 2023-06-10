@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.ResponseDTO;
 import com.example.demo.dto.TestRequestBodyDTO;
 
 @RestController
@@ -34,4 +37,14 @@ public class TestController {
 		return "Hello World! ID"+requestDto.getId()+"Message : "+requestDto.getMessage();
 	}
 	
+	@GetMapping("/testResponseBody")
+	public ResponseDTO<String> testControllerResponseBody(){
+		List<String> list = new ArrayList<String>();
+		list.add("Hellot World! I'm ResponseDTO");
+		list.add("See you!");
+		ResponseDTO<String> responseDTO = ResponseDTO.<String>builder()
+													.data(list)
+													.build();
+		return responseDTO;
+	}
 }
