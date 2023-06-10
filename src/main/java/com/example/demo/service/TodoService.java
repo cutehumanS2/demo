@@ -16,7 +16,7 @@ public class TodoService {
 		//return "Test Service";
 		// Todo Entity 생성
 		TodoEntity entity = TodoEntity.builder()
-				.userId("user01")
+				.userId("Choi Ga Hui")
 				.title("My first todo item")
 				.build();
 				
