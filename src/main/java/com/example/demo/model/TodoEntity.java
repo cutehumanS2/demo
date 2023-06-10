@@ -21,7 +21,7 @@ public class TodoEntity {
 	@GeneratedValue(generator="system-uuid") // 자동으로 id 성성
 	@GenericGenerator(name="system-uuid",strategy="uuid")
 	private String id;
-	private String Userid;
+	private String userId;
 	private String title;
 	private boolean done;
 }
